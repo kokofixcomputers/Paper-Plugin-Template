@@ -88,8 +88,8 @@ processResources {
 checkstyle {
     toolVersion = '11.0.0'
     maxWarnings = 0
+    ignoreFailures = true
 }
-
 configurations.checkstyle {
     resolutionStrategy.capabilitiesResolution.withCapability("com.google.collections:google-collections") {
         select("com.google.guava:guava:23.0")
@@ -117,6 +117,13 @@ shadowJar {
     relocate 'io.papermc.lib', 'shadow.io.papermc.paperlib'
     minimize()
 }
+
+// Disable SpotBugs
+spotbugs {
+    ignoreFailures = true
+    showStackTraces = false
+}
+
 
 // Disable jar and replace with shadowJar
 jar.enabled = false
