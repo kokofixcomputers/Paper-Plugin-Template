@@ -1,4 +1,4 @@
-package {{namespace}}.{{name}};
+package {{namespace}}.{{lowername}};
 
 import io.papermc.lib.PaperLib;
 import org.bukkit.plugin.java.JavaPlugin;
